@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Monsters Quest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Earthy whimsical fitness</p>
+          <h1>Track Monsters Quest</h1>
+        </div>
+        <button id="logoutBtn" class="ghost-btn hidden">Log out</button>
+      </header>
+
+      <main>
+        <section id="authCard" class="card auth-card">
+          <h2>Create your account</h2>
+          <p class="muted">Sign in to build your monster, track runs, and cheer on teammates.</p>
+          <form id="authForm" class="stack">
+            <input id="username" required placeholder="Username" minlength="3" />
+            <input id="password" required placeholder="Password" type="password" minlength="5" />
+            <button class="primary-btn" type="submit">Sign up / Login</button>
+          </form>
+          <p class="tiny">Demo note: account info stores in your browser only.</p>
+        </section>
+
+        <section id="appContent" class="hidden">
+          <article id="homeTab" class="tab-panel active">
+            <div class="card hero-card">
+              <div>
+                <h2 id="welcomeTitle">Hi Runner!</h2>
+                <p class="muted" id="dailyQuest">Daily Quest: Run 2 miles and hydrate after practice.</p>
+                <div class="stats-row">
+                  <span>Credits: <strong id="creditCount">0</strong></span>
+                  <span>Total Miles: <strong id="milesCount">0</strong></span>
+                  <span>Total Workouts: <strong id="workoutCount">0</strong></span>
+                </div>
+              </div>
+              <div class="monster-wrap">
+                <div id="monsterAvatar" class="monster mossy"></div>
+                <p id="monsterName" class="monster-name">Moss Sprout</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Medals</h3>
+              <div id="medals" class="badge-grid"></div>
+            </div>
+
+            <div class="card">
+              <h3>Friends</h3>
+              <form id="friendForm" class="inline-form">
+                <input id="friendName" placeholder="Add teammate username" required />
+                <button class="primary-btn" type="submit">Add</button>
+              </form>
+              <ul id="friendList" class="list"></ul>
+            </div>
+          </article>
+
+          <article id="trackingTab" class="tab-panel">
+            <div class="card">
+              <h2>Track a Workout</h2>
+              <form id="workoutForm" class="stack">
+                <label>Distance (miles)<input id="distance" type="number" step="0.01" min="0.1" required /></label>
+                <label>Time (minutes)<input id="minutes" type="number" step="0.1" min="1" required /></label>
+                <label>Workout photo proof (optional)<input id="proof" type="file" accept="image/*" /></label>
+                <button class="primary-btn" type="submit">Log Workout</button>
+              </form>
+              <p class="tiny">Tip: Photos are not uploaded (prototype), but the field is here for future proof verification.</p>
+            </div>
+
+            <div class="card">
+              <h3>Recent Runs</h3>
+              <ul id="workoutList" class="list"></ul>
+            </div>
+          </article>
+
+          <article id="shopTab" class="tab-panel">
+            <div class="card">
+              <h2>Monster Outfit Shop</h2>
+              <p class="muted">Spend credits from workouts and customize your little buddy.</p>
+              <div id="shopGrid" class="shop-grid"></div>
+            </div>
+          </article>
+
+          <article id="supportTab" class="tab-panel">
+            <div class="card">
+              <h2>Support & Contact</h2>
+              <p>Email: <a href="mailto:coach@trackmonsters.com">coach@trackmonsters.com</a></p>
+              <p>Questions, bug reports, and feature requests are welcome.</p>
+              <form class="stack" id="donateForm">
+                <label>Donate amount ($)<input id="donation" type="number" min="1" step="1" required /></label>
+                <button class="primary-btn" type="submit">Send Support</button>
+              </form>
+              <p id="donateMsg" class="muted"></p>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <nav id="tabBar" class="tabbar hidden">
+        <button data-tab="homeTab" class="tab-btn active">🏡 Home</button>
+        <button data-tab="trackingTab" class="tab-btn">📍 Tracking</button>
+        <button data-tab="shopTab" class="tab-btn">🛍️ Shop</button>
+        <button data-tab="supportTab" class="tab-btn">🌱 Support</button>
+      </nav>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
