@@ -1,1 +1,15 @@
-![characters](https://github.com/user-attachments/assets/5152285b-3569-4752-a986-5e41777558df)![index](https://github.com/user-attachments/assets/23384ba4-58a2-41d2-b045-6ac7af2868b8)
+# Track Monsters Quest
+
+A fun, whimsical workout logging prototype for track teams.
+
+## Features
+- Username/password login (browser-local demo auth)
+- Workout tracking with distance + time input and optional photo-proof field
+- Credits system for logged workouts
+- Monster avatar with shop outfits
+- Friend list and medal achievements
+- Bottom-tab navigation: Home, Tracking, Shop, Support
+- Support tab with contact + donation form
+
+## Run locally
+Open `index.html` in your browser.
